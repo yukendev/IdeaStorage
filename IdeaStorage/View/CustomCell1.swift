@@ -8,10 +8,16 @@
 import UIKit
 
 class CustomCell1: UITableViewCell {
-
+    
+    
+    @IBOutlet weak var categoryLabel: UILabel!
+    @IBOutlet weak var container: UIView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        container.layer.cornerRadius = 5
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

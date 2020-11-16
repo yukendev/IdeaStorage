@@ -9,12 +9,19 @@
 /* Begin PBXBuildFile section */
 		45315F8A25625CDF00F56604 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45315F8925625CDF00F56604 /* AppDelegate.swift */; };
 		45315F8C25625CDF00F56604 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45315F8B25625CDF00F56604 /* SceneDelegate.swift */; };
-		45315F8E25625CDF00F56604 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45315F8D25625CDF00F56604 /* ViewController.swift */; };
 		45315F9125625CDF00F56604 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45315F8F25625CDF00F56604 /* Main.storyboard */; };
 		45315F9325625CE200F56604 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45315F9225625CE200F56604 /* Assets.xcassets */; };
 		45315F9625625CE200F56604 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45315F9425625CE200F56604 /* LaunchScreen.storyboard */; };
 		45315FA125625CE200F56604 /* IdeaStorageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45315FA025625CE200F56604 /* IdeaStorageTests.swift */; };
 		45315FAC25625CE300F56604 /* IdeaStorageUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45315FAB25625CE300F56604 /* IdeaStorageUITests.swift */; };
+		45315FC625625D8400F56604 /* IdeaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45315FC525625D8400F56604 /* IdeaViewController.swift */; };
+		45315FCC25625DA100F56604 /* StorageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45315FCB25625DA100F56604 /* StorageViewController.swift */; };
+		45315FD425625DDD00F56604 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45315FD325625DDD00F56604 /* DetailViewController.swift */; };
+		45315FDA256297AD00F56604 /* CustomCell1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45315FD8256297AC00F56604 /* CustomCell1.swift */; };
+		45315FDB256297AD00F56604 /* CustomCell1.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45315FD9256297AC00F56604 /* CustomCell1.xib */; };
+		45C4D4E42562AE7A00509585 /* CustomCell2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C4D4E22562AE7A00509585 /* CustomCell2.swift */; };
+		45C4D4E52562AE7A00509585 /* CustomCell2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45C4D4E32562AE7A00509585 /* CustomCell2.xib */; };
+		45C4D4ED2562B7C300509585 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C4D4EC2562B7C300509585 /* AddViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +45,6 @@
 		45315F8625625CDF00F56604 /* IdeaStorage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IdeaStorage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		45315F8925625CDF00F56604 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		45315F8B25625CDF00F56604 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		45315F8D25625CDF00F56604 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		45315F9025625CDF00F56604 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		45315F9225625CE200F56604 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		45315F9525625CE200F56604 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +55,14 @@
 		45315FA725625CE300F56604 /* IdeaStorageUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IdeaStorageUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		45315FAB25625CE300F56604 /* IdeaStorageUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdeaStorageUITests.swift; sourceTree = "<group>"; };
 		45315FAD25625CE300F56604 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		45315FC525625D8400F56604 /* IdeaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdeaViewController.swift; sourceTree = "<group>"; };
+		45315FCB25625DA100F56604 /* StorageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageViewController.swift; sourceTree = "<group>"; };
+		45315FD325625DDD00F56604 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		45315FD8256297AC00F56604 /* CustomCell1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell1.swift; sourceTree = "<group>"; };
+		45315FD9256297AC00F56604 /* CustomCell1.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomCell1.xib; sourceTree = "<group>"; };
+		45C4D4E22562AE7A00509585 /* CustomCell2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell2.swift; sourceTree = "<group>"; };
+		45C4D4E32562AE7A00509585 /* CustomCell2.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomCell2.xib; sourceTree = "<group>"; };
+		45C4D4EC2562B7C300509585 /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,11 +113,9 @@
 		45315F8825625CDF00F56604 /* IdeaStorage */ = {
 			isa = PBXGroup;
 			children = (
-				45315F8925625CDF00F56604 /* AppDelegate.swift */,
-				45315F8B25625CDF00F56604 /* SceneDelegate.swift */,
-				45315F8D25625CDF00F56604 /* ViewController.swift */,
-				45315F8F25625CDF00F56604 /* Main.storyboard */,
-				45315F9225625CE200F56604 /* Assets.xcassets */,
+				45315FC125625CFF00F56604 /* Controller */,
+				45315FC025625CF800F56604 /* Model */,
+				45315FBC25625CF200F56604 /* View */,
 				45315F9425625CE200F56604 /* LaunchScreen.storyboard */,
 				45315F9725625CE200F56604 /* Info.plist */,
 			);
@@ -126,6 +138,39 @@
 				45315FAD25625CE300F56604 /* Info.plist */,
 			);
 			path = IdeaStorageUITests;
+			sourceTree = "<group>";
+		};
+		45315FBC25625CF200F56604 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				45315F8F25625CDF00F56604 /* Main.storyboard */,
+				45315F9225625CE200F56604 /* Assets.xcassets */,
+				45315FD8256297AC00F56604 /* CustomCell1.swift */,
+				45315FD9256297AC00F56604 /* CustomCell1.xib */,
+				45C4D4E22562AE7A00509585 /* CustomCell2.swift */,
+				45C4D4E32562AE7A00509585 /* CustomCell2.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		45315FC025625CF800F56604 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		45315FC125625CFF00F56604 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				45315F8925625CDF00F56604 /* AppDelegate.swift */,
+				45315F8B25625CDF00F56604 /* SceneDelegate.swift */,
+				45315FC525625D8400F56604 /* IdeaViewController.swift */,
+				45315FCB25625DA100F56604 /* StorageViewController.swift */,
+				45315FD325625DDD00F56604 /* DetailViewController.swift */,
+				45C4D4EC2562B7C300509585 /* AddViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,9 +276,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45315FDB256297AD00F56604 /* CustomCell1.xib in Resources */,
 				45315F9625625CE200F56604 /* LaunchScreen.storyboard in Resources */,
 				45315F9325625CE200F56604 /* Assets.xcassets in Resources */,
 				45315F9125625CDF00F56604 /* Main.storyboard in Resources */,
+				45C4D4E52562AE7A00509585 /* CustomCell2.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,8 +305,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				45315F8E25625CDF00F56604 /* ViewController.swift in Sources */,
+				45315FDA256297AD00F56604 /* CustomCell1.swift in Sources */,
 				45315F8A25625CDF00F56604 /* AppDelegate.swift in Sources */,
+				45C4D4ED2562B7C300509585 /* AddViewController.swift in Sources */,
+				45315FC625625D8400F56604 /* IdeaViewController.swift in Sources */,
+				45C4D4E42562AE7A00509585 /* CustomCell2.swift in Sources */,
+				45315FD425625DDD00F56604 /* DetailViewController.swift in Sources */,
+				45315FCC25625DA100F56604 /* StorageViewController.swift in Sources */,
 				45315F8C25625CDF00F56604 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
