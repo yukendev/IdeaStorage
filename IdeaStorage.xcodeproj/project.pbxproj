@@ -22,6 +22,9 @@
 		45C4D4E42562AE7A00509585 /* CustomCell2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C4D4E22562AE7A00509585 /* CustomCell2.swift */; };
 		45C4D4E52562AE7A00509585 /* CustomCell2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45C4D4E32562AE7A00509585 /* CustomCell2.xib */; };
 		45C4D4ED2562B7C300509585 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C4D4EC2562B7C300509585 /* AddViewController.swift */; };
+		637B5A97909C9150CA1B812C /* Pods_IdeaStorage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E64F52B43B7136C49418DE76 /* Pods_IdeaStorage.framework */; };
+		6D68F11D4240EF1C1319745B /* Pods_IdeaStorage_IdeaStorageUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CF0674C41CAA3608607DF3C /* Pods_IdeaStorage_IdeaStorageUITests.framework */; };
+		B106BFA2D4782407A403DE52 /* Pods_IdeaStorageTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D554D052F9746C264D7F2206 /* Pods_IdeaStorageTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +45,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2CF0674C41CAA3608607DF3C /* Pods_IdeaStorage_IdeaStorageUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IdeaStorage_IdeaStorageUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2FD752F5DF9D684CC85F1DBC /* Pods-IdeaStorage.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IdeaStorage.release.xcconfig"; path = "Target Support Files/Pods-IdeaStorage/Pods-IdeaStorage.release.xcconfig"; sourceTree = "<group>"; };
 		45315F8625625CDF00F56604 /* IdeaStorage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IdeaStorage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		45315F8925625CDF00F56604 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		45315F8B25625CDF00F56604 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +68,13 @@
 		45C4D4E22562AE7A00509585 /* CustomCell2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell2.swift; sourceTree = "<group>"; };
 		45C4D4E32562AE7A00509585 /* CustomCell2.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomCell2.xib; sourceTree = "<group>"; };
 		45C4D4EC2562B7C300509585 /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
+		57D18DEF3D55197BB9784AD3 /* Pods-IdeaStorageTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IdeaStorageTests.release.xcconfig"; path = "Target Support Files/Pods-IdeaStorageTests/Pods-IdeaStorageTests.release.xcconfig"; sourceTree = "<group>"; };
+		6DD8F1E400ADF0100B1BCB87 /* Pods-IdeaStorage-IdeaStorageUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IdeaStorage-IdeaStorageUITests.release.xcconfig"; path = "Target Support Files/Pods-IdeaStorage-IdeaStorageUITests/Pods-IdeaStorage-IdeaStorageUITests.release.xcconfig"; sourceTree = "<group>"; };
+		984C20490B77F197A62E7F40 /* Pods-IdeaStorageTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IdeaStorageTests.debug.xcconfig"; path = "Target Support Files/Pods-IdeaStorageTests/Pods-IdeaStorageTests.debug.xcconfig"; sourceTree = "<group>"; };
+		C32EAADE5F7712748245842E /* Pods-IdeaStorage-IdeaStorageUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IdeaStorage-IdeaStorageUITests.debug.xcconfig"; path = "Target Support Files/Pods-IdeaStorage-IdeaStorageUITests/Pods-IdeaStorage-IdeaStorageUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		D554D052F9746C264D7F2206 /* Pods_IdeaStorageTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IdeaStorageTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E64F52B43B7136C49418DE76 /* Pods_IdeaStorage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IdeaStorage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC208F8DD4B8FE6595E37116 /* Pods-IdeaStorage.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IdeaStorage.debug.xcconfig"; path = "Target Support Files/Pods-IdeaStorage/Pods-IdeaStorage.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				637B5A97909C9150CA1B812C /* Pods_IdeaStorage.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,6 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B106BFA2D4782407A403DE52 /* Pods_IdeaStorageTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,12 +98,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6D68F11D4240EF1C1319745B /* Pods_IdeaStorage_IdeaStorageUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		354AEB35E9B52943C3E98752 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E64F52B43B7136C49418DE76 /* Pods_IdeaStorage.framework */,
+				2CF0674C41CAA3608607DF3C /* Pods_IdeaStorage_IdeaStorageUITests.framework */,
+				D554D052F9746C264D7F2206 /* Pods_IdeaStorageTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		45315F7D25625CDF00F56604 = {
 			isa = PBXGroup;
 			children = (
@@ -97,6 +122,8 @@
 				45315F9F25625CE200F56604 /* IdeaStorageTests */,
 				45315FAA25625CE300F56604 /* IdeaStorageUITests */,
 				45315F8725625CDF00F56604 /* Products */,
+				8A648467B4E24C52D93099A4 /* Pods */,
+				354AEB35E9B52943C3E98752 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -173,6 +200,20 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		8A648467B4E24C52D93099A4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				EC208F8DD4B8FE6595E37116 /* Pods-IdeaStorage.debug.xcconfig */,
+				2FD752F5DF9D684CC85F1DBC /* Pods-IdeaStorage.release.xcconfig */,
+				C32EAADE5F7712748245842E /* Pods-IdeaStorage-IdeaStorageUITests.debug.xcconfig */,
+				6DD8F1E400ADF0100B1BCB87 /* Pods-IdeaStorage-IdeaStorageUITests.release.xcconfig */,
+				984C20490B77F197A62E7F40 /* Pods-IdeaStorageTests.debug.xcconfig */,
+				57D18DEF3D55197BB9784AD3 /* Pods-IdeaStorageTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -180,9 +221,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 45315FB025625CE300F56604 /* Build configuration list for PBXNativeTarget "IdeaStorage" */;
 			buildPhases = (
+				2E97FC36D336FE021DB721EA /* [CP] Check Pods Manifest.lock */,
 				45315F8225625CDF00F56604 /* Sources */,
 				45315F8325625CDF00F56604 /* Frameworks */,
 				45315F8425625CDF00F56604 /* Resources */,
+				191B8F4090722C2CDA6CFDAF /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -197,6 +240,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 45315FB325625CE300F56604 /* Build configuration list for PBXNativeTarget "IdeaStorageTests" */;
 			buildPhases = (
+				97351E47AE1A2F613B0B2028 /* [CP] Check Pods Manifest.lock */,
 				45315F9825625CE200F56604 /* Sources */,
 				45315F9925625CE200F56604 /* Frameworks */,
 				45315F9A25625CE200F56604 /* Resources */,
@@ -215,9 +259,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 45315FB625625CE300F56604 /* Build configuration list for PBXNativeTarget "IdeaStorageUITests" */;
 			buildPhases = (
+				43F7759BB2EB1D26099E3FFA /* [CP] Check Pods Manifest.lock */,
 				45315FA325625CE300F56604 /* Sources */,
 				45315FA425625CE300F56604 /* Frameworks */,
 				45315FA525625CE300F56604 /* Resources */,
+				C2E531974DD8EC77ED71A092 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -299,6 +345,109 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		191B8F4090722C2CDA6CFDAF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-IdeaStorage/Pods-IdeaStorage-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-IdeaStorage/Pods-IdeaStorage-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-IdeaStorage/Pods-IdeaStorage-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2E97FC36D336FE021DB721EA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-IdeaStorage-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		43F7759BB2EB1D26099E3FFA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-IdeaStorage-IdeaStorageUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		97351E47AE1A2F613B0B2028 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-IdeaStorageTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C2E531974DD8EC77ED71A092 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-IdeaStorage-IdeaStorageUITests/Pods-IdeaStorage-IdeaStorageUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-IdeaStorage-IdeaStorageUITests/Pods-IdeaStorage-IdeaStorageUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-IdeaStorage-IdeaStorageUITests/Pods-IdeaStorage-IdeaStorageUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		45315F8225625CDF00F56604 /* Sources */ = {
@@ -485,6 +634,7 @@
 		};
 		45315FB125625CE300F56604 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EC208F8DD4B8FE6595E37116 /* Pods-IdeaStorage.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -503,6 +653,7 @@
 		};
 		45315FB225625CE300F56604 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2FD752F5DF9D684CC85F1DBC /* Pods-IdeaStorage.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -521,6 +672,7 @@
 		};
 		45315FB425625CE300F56604 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 984C20490B77F197A62E7F40 /* Pods-IdeaStorageTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -542,6 +694,7 @@
 		};
 		45315FB525625CE300F56604 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 57D18DEF3D55197BB9784AD3 /* Pods-IdeaStorageTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -563,6 +716,7 @@
 		};
 		45315FB725625CE300F56604 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C32EAADE5F7712748245842E /* Pods-IdeaStorage-IdeaStorageUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -582,6 +736,7 @@
 		};
 		45315FB825625CE300F56604 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6DD8F1E400ADF0100B1BCB87 /* Pods-IdeaStorage-IdeaStorageUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

@@ -12,6 +12,7 @@ class CustomCell1: UITableViewCell {
     
     @IBOutlet weak var categoryLabel: UILabel!
     @IBOutlet weak var container: UIView!
+    @IBOutlet weak var amountOfNumber: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

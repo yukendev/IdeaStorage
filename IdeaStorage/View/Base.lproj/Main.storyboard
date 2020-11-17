@@ -59,9 +59,9 @@
         <!--Add View Controller-->
         <scene sceneID="vKP-DC-B37">
             <objects>
-                <viewController id="tUl-eG-6c5" customClass="AddViewController" customModule="IdeaStorage" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="tUl-eG-6c5" customClass="AddViewController" customModule="IdeaStorage" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BZ3-d2-3GF">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="add" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="auK-dH-1Fw">
@@ -85,6 +85,15 @@
                                 <state key="normal" title="追加"/>
                                 <connections>
                                     <action selector="addAction:" destination="tUl-eG-6c5" eventType="touchUpInside" id="XVV-AV-5zp"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mOf-xk-r5m">
+                                <rect key="frame" x="20" y="59" width="73" height="53"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                <state key="normal" title="戻る"/>
+                                <connections>
+                                    <action selector="backAction:" destination="tUl-eG-6c5" eventType="touchUpInside" id="I5b-5b-gXR"/>
                                 </connections>
                             </button>
                         </subviews>

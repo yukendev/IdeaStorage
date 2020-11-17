@@ -6,6 +6,12 @@
 //
 
 import UIKit
+import RealmSwift
+
+class Idea: Object {
+    @objc dynamic var idea: String = ""
+    @objc dynamic var category: String = ""
+}
 
 class StorageViewController: UIViewController, UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
     
@@ -17,9 +23,9 @@ class StorageViewController: UIViewController, UITextFieldDelegate, UIPickerView
     @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var pickerView: UIPickerView!
     
-    let dataList: [String] = ["アイデア", "ブログ", "やること"]
-    
-    var category = String()
+    var dataList = [String]()
+    let realm = try! Realm()
+    var selectedCategory = String()
     
     
     
@@ -33,9 +39,38 @@ class StorageViewController: UIViewController, UITextFieldDelegate, UIPickerView
         textField.delegate = self
         pickerView.delegate = self
         pickerView.dataSource = self
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
         
+        print("viewWillAppear開始")
         
-        category = dataList[0]
+        let categoryArray = realm.objects(Category.self)
+        
+        dataList = []
+        
+        if categoryArray.count == 0 {
+            let category = Category()
+            category.categoryName = "カテゴリー１"
+            try! realm.write{
+                realm.add(category)
+            }
+            dataList = ["カテゴリー１"]
+        }else{
+            for category in categoryArray {
+                dataList.append(category.categoryName!)
+            }
+        }
+        
+        selectedCategory = dataList[0]
+       
+        pickerView.reloadAllComponents()
+//        if dataList.count != 0 {
+//            selectedCategory = dataList[0]
+//        }else{
+//            dataList = ["カテゴリー１"]
+//        }
         
     }
     
@@ -53,7 +88,7 @@ class StorageViewController: UIViewController, UITextFieldDelegate, UIPickerView
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
-        category = dataList[row]
+        selectedCategory = dataList[row]
     }
     
     
@@ -62,9 +97,27 @@ class StorageViewController: UIViewController, UITextFieldDelegate, UIPickerView
     }
     
     @IBAction func saveAction(_ sender: Any) {
-        print(category)
+        
+        if textField.text != "" {
+            let idea = Idea()
+            idea.idea = textField.text!
+            idea.category = selectedCategory
+            
+            try! realm.write{
+                realm.add(idea)
+            }
+            
+            afterSave()
+        }else{
+            
+        }
+        
+        print(selectedCategory)
     }
     
+    func afterSave() {
+        textField.text = ""
+    }
     
     
 }

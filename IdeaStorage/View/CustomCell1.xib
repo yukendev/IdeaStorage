@@ -61,6 +61,7 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="amountOfNumber" destination="mok-4P-iVt" id="h0C-vh-DF0"/>
                 <outlet property="categoryLabel" destination="jAm-mD-2Xw" id="pom-l6-nc1"/>
                 <outlet property="container" destination="W1t-JF-arb" id="acx-TE-obd"/>
             </connections>
