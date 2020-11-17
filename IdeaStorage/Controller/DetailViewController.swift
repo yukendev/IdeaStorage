@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -17,7 +18,9 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     var category: String = ""
     
-    let ideaArray: [String] = ["30日チャレンジアプリ", "運ゲーアプリ", "雲SNSアプリ"]
+//    let ideaArray: [String] = ["30日チャレンジアプリ", "運ゲーアプリ", "雲SNSアプリ"]
+    var ideaArray = [String]()
+    let realm = try! Realm()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +37,17 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
         super.viewWillAppear(true)
         
         titleLabel.text = category
+        
+        print("JK")
+        let ideas = realm.objects(Idea.self).filter("category == '\(category)'")
+        if ideas.count != 0 {
+            for idea in ideas {
+                ideaArray.append(idea.idea)
+            }
+        }else{
+            ideaArray = []
+        }
+        
     }
     
 

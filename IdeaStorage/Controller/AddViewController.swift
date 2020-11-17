@@ -52,6 +52,7 @@ class AddViewController: UIViewController, UITextFieldDelegate {
             
             dismiss(animated: true, completion: nil)
         }else{
+            showAlert()
             print("空白はダメです")
         }
         
@@ -62,4 +63,14 @@ class AddViewController: UIViewController, UITextFieldDelegate {
         dismiss(animated: true, completion: nil)
     }
     
+    
+    func showAlert() {
+        let alertController = UIAlertController(title: "入力してください", message: "", preferredStyle: .alert)
+        let cansel = UIAlertAction(title: "ok", style: .cancel, handler: nil)
+
+          alertController.addAction(cansel)
+
+          self.present(alertController, animated: true, completion: nil)
+    }
+
 }

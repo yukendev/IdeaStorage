@@ -109,7 +109,7 @@ class StorageViewController: UIViewController, UITextFieldDelegate, UIPickerView
             
             afterSave()
         }else{
-            
+            showAlert()
         }
         
         print(selectedCategory)
@@ -119,5 +119,14 @@ class StorageViewController: UIViewController, UITextFieldDelegate, UIPickerView
         textField.text = ""
     }
     
+    
+    func showAlert() {
+        let alertController = UIAlertController(title: "入力してください", message: "", preferredStyle: .alert)
+        let cansel = UIAlertAction(title: "ok", style: .cancel, handler: nil)
+
+          alertController.addAction(cansel)
+
+          self.present(alertController, animated: true, completion: nil)
+    }
     
 }
