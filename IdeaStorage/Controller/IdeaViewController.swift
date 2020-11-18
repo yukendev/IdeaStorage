@@ -101,6 +101,12 @@ class IdeaViewController: UIViewController, UITableViewDelegate, UITableViewData
         performSegue(withIdentifier: "detail", sender: nil)
     }
     
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        
+        print(indexPath.row)
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "detail" {

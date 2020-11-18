@@ -21,7 +21,7 @@ class AddViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var textField: UITextField!
     
     
-    
+    let realm = try! Realm()
     
 
     override func viewDidLoad() {
@@ -39,20 +39,25 @@ class AddViewController: UIViewController, UITextFieldDelegate {
     
 
     @IBAction func addAction(_ sender: Any) {
-        
         if textField.text != "" {
-            let category = Category()
-            category.categoryName = textField.text
+            let categories = realm.objects(Category.self)
             
-            let realm = try! Realm()
-            try! realm.write{
-                realm.add(category)
+            var categoryNames = [String]()
+            
+            for category in categories {
+                categoryNames.append(category.categoryName!)
             }
             
-            
-            dismiss(animated: true, completion: nil)
+            if categoryNames.contains(textField.text!) {
+                print("被りはダメです")
+                showAlert(type: "double")
+            }else{
+                print("被ってないです")
+                addToRealm()
+                dismiss(animated: true, completion: nil)
+            }
         }else{
-            showAlert()
+            showAlert(type: "blank")
             print("空白はダメです")
         }
         
@@ -64,13 +69,32 @@ class AddViewController: UIViewController, UITextFieldDelegate {
     }
     
     
-    func showAlert() {
-        let alertController = UIAlertController(title: "入力してください", message: "", preferredStyle: .alert)
-        let cansel = UIAlertAction(title: "ok", style: .cancel, handler: nil)
-
-          alertController.addAction(cansel)
-
-          self.present(alertController, animated: true, completion: nil)
+    func showAlert(type: String) {
+        switch type {
+        case "blank":
+            let alertController = UIAlertController(title: "入力してください", message: "", preferredStyle: .alert)
+            let cansel = UIAlertAction(title: "ok", style: .cancel, handler: nil)
+            alertController.addAction(cansel)
+            self.present(alertController, animated: true, completion: nil)
+        case "double":
+            let alertController = UIAlertController(title: "カテゴリーが重複しています", message: "", preferredStyle: .alert)
+            let cansel = UIAlertAction(title: "ok", style: .cancel, handler: nil)
+            alertController.addAction(cansel)
+            self.present(alertController, animated: true, completion: nil)
+        default:
+            let alertController = UIAlertController(title: "エラーです", message: "", preferredStyle: .alert)
+            let cansel = UIAlertAction(title: "ok", style: .cancel, handler: nil)
+            alertController.addAction(cansel)
+            self.present(alertController, animated: true, completion: nil)
+        }
+    }
+    
+    func addToRealm() {
+        let category = Category()
+        category.categoryName = textField.text
+        try! realm.write{
+            realm.add(category)
+        }
     }
 
 }

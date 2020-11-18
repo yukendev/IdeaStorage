@@ -14,6 +14,7 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var noIdeaLabel: UILabel!
     
     
     var category: String = ""
@@ -41,11 +42,13 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
         print("JK")
         let ideas = realm.objects(Idea.self).filter("category == '\(category)'")
         if ideas.count != 0 {
+            noIdeaLabel.isHidden = true
             for idea in ideas {
                 ideaArray.append(idea.idea)
             }
         }else{
             ideaArray = []
+            noIdeaLabel.isHidden = false
         }
         
     }
@@ -67,6 +70,11 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
         cell.selectionStyle = .none
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        
+        print(indexPath.row)
     }
     
 
