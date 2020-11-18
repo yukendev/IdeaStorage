@@ -54,14 +54,6 @@ class IdeaViewController: UIViewController, UITableViewDelegate, UITableViewData
                 dataList.append(category.categoryName!)
             }
         }
-        
-//        let categoryArray = realm.objects(Category.self)
-//        
-//        dataList = []
-//
-//        for category in categoryArray {
-//            dataList.append(category.categoryName!)
-//        }
         tableView.reloadData()
         
         print(dataList)
@@ -105,6 +97,7 @@ class IdeaViewController: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         
         print(indexPath.row)
+        showAlert(indexPath: indexPath.row)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -119,6 +112,57 @@ class IdeaViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     @IBAction func addAction(_ sender: Any) {
         performSegue(withIdentifier: "add", sender: nil)
+    }
+    
+    func showAlert(indexPath: Int) {
+        let alertController = UIAlertController(title: "本当に削除しますか？", message: "", preferredStyle: .alert)
+        let deleteAction = UIAlertAction(title: "はい", style: .default) { (alert) in
+            self.deleteAction(indexPath: indexPath)
+        }
+        let cansel = UIAlertAction(title: "いいえ", style: .cancel, handler: nil)
+
+        alertController.addAction(cansel)
+        alertController.addAction(deleteAction)
+
+          self.present(alertController, animated: true, completion: nil)
+    }
+    
+    func deleteAction(indexPath: Int) {
+        print("上から\(indexPath + 1)番目を消します")
+        print(dataList[indexPath])
+        
+        let deletedCategoryName = dataList[indexPath]
+        
+        deleteCategory(category: deletedCategoryName)
+
+        deleteIdeas(category: deletedCategoryName)
+
+        tableView.reloadData()
+    }
+    
+    
+    
+    func deleteCategory(category: String) {
+        let newDataList = realm.objects(Category.self).filter("categoryName != '\(category)'")
+        let deletedCategory = realm.objects(Category.self).filter("categoryName == '\(category)'")
+        
+        dataList = []
+        for category in newDataList {
+            dataList.append(category.categoryName!)
+        }
+        try! realm.write{
+            realm.delete(deletedCategory)
+        }
+    }
+    
+    
+    
+    func deleteIdeas(category: String) {
+        let deletedIdeas = realm.objects(Idea.self).filter("category == '\(category)'")
+        
+        try! realm.write{
+            realm.delete(deletedIdeas)
+        }
     }
     
 }

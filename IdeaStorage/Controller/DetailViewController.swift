@@ -75,6 +75,41 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         
         print(indexPath.row)
+        showAlert(indexPath: indexPath.row)
+    }
+    
+    func showAlert(indexPath: Int) {
+        let alertController = UIAlertController(title: "本当に削除しますか？", message: "", preferredStyle: .alert)
+        let deleteAction = UIAlertAction(title: "はい", style: .default) { (alert) in
+            self.deleteAction(indexPath: indexPath)
+        }
+        let cansel = UIAlertAction(title: "いいえ", style: .cancel, handler: nil)
+
+        alertController.addAction(cansel)
+        alertController.addAction(deleteAction)
+
+          self.present(alertController, animated: true, completion: nil)
+    }
+    
+    func deleteAction(indexPath: Int) {
+        print("上から\(indexPath + 1)番目を消します")
+        
+        print(ideaArray[indexPath])
+        
+        
+        let newIdeaArray = realm.objects(Idea.self).filter("(idea != '\(ideaArray[indexPath])') && (category == '\(category)')")
+        
+        
+        let deletedIdea = realm.objects(Idea.self).filter("(idea == '\(ideaArray[indexPath])') && (category == '\(category)')")
+        
+        ideaArray = []
+        for idea in newIdeaArray {
+            ideaArray.append(idea.idea)
+        }
+        try! realm.write{
+            realm.delete(deletedIdea)
+        }
+        tableView.reloadData()
     }
     
 
