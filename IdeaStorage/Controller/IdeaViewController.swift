@@ -119,7 +119,7 @@ class IdeaViewController: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         
         print(indexPath.row)
-        showAlert(indexPath: indexPath.row)
+        showAlert(indexPath: indexPath.row, type: "delete")
     }
     
     func tableView(_ tableView: UITableView, titleForDeleteConfirmationButtonForRowAt indexPath: IndexPath) -> String? {
@@ -140,17 +140,28 @@ class IdeaViewController: UIViewController, UITableViewDelegate, UITableViewData
         performSegue(withIdentifier: "add", sender: nil)
     }
     
-    func showAlert(indexPath: Int) {
-        let alertController = UIAlertController(title: "本当に削除しますか？", message: "", preferredStyle: .alert)
-        let deleteAction = UIAlertAction(title: "はい", style: .default) { (alert) in
-            self.deleteAction(indexPath: indexPath)
+    func showAlert(indexPath: Int, type: String) {
+        
+        switch type {
+        case "delete":
+            let alertController = UIAlertController(title: "本当に削除しますか？", message: "", preferredStyle: .alert)
+            let deleteAction = UIAlertAction(title: "はい", style: .default) { (alert) in
+                self.deleteAction(indexPath: indexPath)
+            }
+            let cansel = UIAlertAction(title: "いいえ", style: .cancel, handler: nil)
+            alertController.addAction(cansel)
+            alertController.addAction(deleteAction)
+            self.present(alertController, animated: true, completion: nil)
+        case "warning":
+            let alertController = UIAlertController(title: "カテゴリーは最低1つ必要です", message: "", preferredStyle: .alert)
+            let cansel = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            alertController.addAction(cansel)
+            self.present(alertController, animated: true, completion: nil)
+        default:
+            print("error")
         }
-        let cansel = UIAlertAction(title: "いいえ", style: .cancel, handler: nil)
-
-        alertController.addAction(cansel)
-        alertController.addAction(deleteAction)
-
-          self.present(alertController, animated: true, completion: nil)
+        
+        
     }
     
     func deleteAction(indexPath: Int) {
@@ -159,11 +170,15 @@ class IdeaViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         let deletedCategoryName = dataList[indexPath]
         
-        deleteCategory(category: deletedCategoryName)
+        if dataList.count == 1 {
+            showAlert(indexPath: 0, type: "warning")
+        }else{
+            deleteCategory(category: deletedCategoryName)
 
-        deleteIdeas(category: deletedCategoryName)
+            deleteIdeas(category: deletedCategoryName)
 
-        tableView.reloadData()
+            tableView.reloadData()
+        }
     }
     
     
