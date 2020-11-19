@@ -17,6 +17,7 @@ class IdeaViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var headerView: UIView!
     
+    
 //    let dataList: [String] = ["アイデア", "ブログ", "やること"]
     var dataList = [String]()
     var selectedCell = String()
@@ -37,10 +38,10 @@ class IdeaViewController: UIViewController, UITableViewDelegate, UITableViewData
         addButton.addTarget(self, action: #selector(self.pushButton_Animation(_:)), for: .touchDown)
         addButton.addTarget(self, action: #selector(self.separateButton_Animation(_:)), for: .touchUpInside)
         
-        let bottomBorder = CALayer()
-        bottomBorder.frame = CGRect(x: 0, y: headerView.frame.height, width: headerView.frame.width, height: 0.5)
-        bottomBorder.backgroundColor = UIColor.black.cgColor
-        headerView.layer.addSublayer(bottomBorder)
+//        let bottomBorder = CALayer()
+//        bottomBorder.frame = CGRect(x: 0, y: headerView.frame.height, width: headerView.frame.width, height: 0.5)
+//        bottomBorder.backgroundColor = UIColor.black.cgColor
+//        headerView.layer.addSublayer(bottomBorder)
         
     }
     

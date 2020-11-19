@@ -45,10 +45,10 @@ class StorageViewController: UIViewController, UITextFieldDelegate, UIPickerView
         saveButton.addTarget(self, action: #selector(self.separateButton_Animation(_:)), for: .touchUpInside)
         
         
-        let bottomBorder = CALayer()
-        bottomBorder.frame = CGRect(x: 0, y: headerView.frame.height, width: headerView.frame.width, height: 0.5)
-        bottomBorder.backgroundColor = UIColor.black.cgColor
-        headerView.layer.addSublayer(bottomBorder)
+//        let bottomBorder = CALayer()
+//        bottomBorder.frame = CGRect(x: 0, y: headerView.frame.height, width: headerView.frame.width, height: 0.5)
+//        bottomBorder.backgroundColor = UIColor.black.cgColor
+//        headerView.layer.addSublayer(bottomBorder)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -81,14 +81,14 @@ class StorageViewController: UIViewController, UITextFieldDelegate, UIPickerView
     
     @objc func pushButton_Animation(_ sender: UIButton){
           UIView.animate(withDuration: 0.1, animations:{ () -> Void in
-              sender.transform = CGAffineTransform(scaleX: 0.99, y: 0.99)
+              sender.transform = CGAffineTransform(scaleX: 0.95, y: 0.95)
           })
       }
           
           
       @objc func separateButton_Animation(_ sender: UIButton){
           UIView.animate(withDuration: 0.2, animations:{ () -> Void in
-              sender.transform = CGAffineTransform(scaleX: 0.99, y: 0.99)
+              sender.transform = CGAffineTransform(scaleX: 0.95, y: 0.95)
               sender.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
           })
       }
@@ -127,26 +127,26 @@ class StorageViewController: UIViewController, UITextFieldDelegate, UIPickerView
                     ideaLists.append(idea.idea)
                 }
             }
-            
+
             if ideaLists.contains(textField.text!) {
                 print("アイデア被り")
                 showAlert(type: "double")
-                
+
             }else{
                 let idea = Idea()
                 idea.idea = textField.text!
                 idea.category = selectedCategory
-                
+
                 try! realm.write{
                     realm.add(idea)
                 }
-                
+
                 afterSave()
             }
         }else{
             showAlert(type: "blank")
         }
-        
+
         print(selectedCategory)
     }
     
@@ -175,5 +175,15 @@ class StorageViewController: UIViewController, UITextFieldDelegate, UIPickerView
             self.present(alertController, animated: true, completion: nil)
         }
         
+    }
+    
+    func ideaAnimation() {
+        UIView.animate(withDuration: 1.0, delay: 0.0, options: .autoreverse) { [self] in
+            ideaContainer.bounds.size.height += 10
+            ideaContainer.bounds.size.width += 10
+        } completion: { _ in
+            print("jk")
+        }
+
     }
 }

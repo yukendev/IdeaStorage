@@ -17,6 +17,7 @@ target 'IdeaStorage' do
   end
 
 pod 'RealmSwift'
+pod 'RAMAnimatedTabBarController'
 
 
 end
