@@ -15,6 +15,7 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var noIdeaLabel: UILabel!
+    @IBOutlet weak var headerView: UIView!
     
     
     var category: String = ""
@@ -30,6 +31,12 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
         tableView.dataSource = self
         tableView.separatorStyle = .none
         tableView.register(UINib(nibName: "CustomCell2", bundle: nil), forCellReuseIdentifier: "customCell2")
+        
+        
+        let bottomBorder = CALayer()
+        bottomBorder.frame = CGRect(x: 0, y: headerView.frame.height, width: headerView.frame.width, height: 0.5)
+        bottomBorder.backgroundColor = UIColor.black.cgColor
+        headerView.layer.addSublayer(bottomBorder)
 
         
     }
@@ -76,6 +83,10 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         print(indexPath.row)
         showAlert(indexPath: indexPath.row)
+    }
+    
+    func tableView(_ tableView: UITableView, titleForDeleteConfirmationButtonForRowAt indexPath: IndexPath) -> String? {
+        return "削除"
     }
     
     func showAlert(indexPath: Int) {

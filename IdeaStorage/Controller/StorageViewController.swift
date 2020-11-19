@@ -18,6 +18,7 @@ class StorageViewController: UIViewController, UITextFieldDelegate, UIPickerView
     
     
     
+    @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var ideaContainer: UIView!
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var saveButton: UIButton!
@@ -39,6 +40,15 @@ class StorageViewController: UIViewController, UITextFieldDelegate, UIPickerView
         textField.delegate = self
         pickerView.delegate = self
         pickerView.dataSource = self
+        
+        saveButton.addTarget(self, action: #selector(self.pushButton_Animation(_:)), for: .touchDown)
+        saveButton.addTarget(self, action: #selector(self.separateButton_Animation(_:)), for: .touchUpInside)
+        
+        
+        let bottomBorder = CALayer()
+        bottomBorder.frame = CGRect(x: 0, y: headerView.frame.height, width: headerView.frame.width, height: 0.5)
+        bottomBorder.backgroundColor = UIColor.black.cgColor
+        headerView.layer.addSublayer(bottomBorder)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -66,13 +76,22 @@ class StorageViewController: UIViewController, UITextFieldDelegate, UIPickerView
         selectedCategory = dataList[0]
        
         pickerView.reloadAllComponents()
-//        if dataList.count != 0 {
-//            selectedCategory = dataList[0]
-//        }else{
-//            dataList = ["カテゴリー１"]
-//        }
         
     }
+    
+    @objc func pushButton_Animation(_ sender: UIButton){
+          UIView.animate(withDuration: 0.1, animations:{ () -> Void in
+              sender.transform = CGAffineTransform(scaleX: 0.99, y: 0.99)
+          })
+      }
+          
+          
+      @objc func separateButton_Animation(_ sender: UIButton){
+          UIView.animate(withDuration: 0.2, animations:{ () -> Void in
+              sender.transform = CGAffineTransform(scaleX: 0.99, y: 0.99)
+              sender.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
+          })
+      }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
@@ -99,17 +118,33 @@ class StorageViewController: UIViewController, UITextFieldDelegate, UIPickerView
     @IBAction func saveAction(_ sender: Any) {
         
         if textField.text != "" {
-            let idea = Idea()
-            idea.idea = textField.text!
-            idea.category = selectedCategory
-            
-            try! realm.write{
-                realm.add(idea)
+            let ideaArray = realm.objects(Idea.self).filter("category == '\(selectedCategory)'")
+            var ideaLists: [String] = []
+            if ideaArray.count == 0 {
+                ideaLists = []
+            }else{
+                for idea in ideaArray {
+                    ideaLists.append(idea.idea)
+                }
             }
             
-            afterSave()
+            if ideaLists.contains(textField.text!) {
+                print("アイデア被り")
+                showAlert(type: "double")
+                
+            }else{
+                let idea = Idea()
+                idea.idea = textField.text!
+                idea.category = selectedCategory
+                
+                try! realm.write{
+                    realm.add(idea)
+                }
+                
+                afterSave()
+            }
         }else{
-            showAlert()
+            showAlert(type: "blank")
         }
         
         print(selectedCategory)
@@ -120,13 +155,25 @@ class StorageViewController: UIViewController, UITextFieldDelegate, UIPickerView
     }
     
     
-    func showAlert() {
-        let alertController = UIAlertController(title: "入力してください", message: "", preferredStyle: .alert)
-        let cansel = UIAlertAction(title: "ok", style: .cancel, handler: nil)
-
-          alertController.addAction(cansel)
-
-          self.present(alertController, animated: true, completion: nil)
+    func showAlert(type: String) {
+        
+        switch type {
+        case "blank":
+            let alertController = UIAlertController(title: "入力してください", message: "", preferredStyle: .alert)
+            let cansel = UIAlertAction(title: "ok", style: .cancel, handler: nil)
+            alertController.addAction(cansel)
+            self.present(alertController, animated: true, completion: nil)
+        case "double":
+            let alertController = UIAlertController(title: "すでに同じアイデアが存在しています", message: "", preferredStyle: .alert)
+            let cansel = UIAlertAction(title: "ok", style: .cancel, handler: nil)
+            alertController.addAction(cansel)
+            self.present(alertController, animated: true, completion: nil)
+        default:
+            let alertController = UIAlertController(title: "エラーが発生しました", message: "", preferredStyle: .alert)
+            let cansel = UIAlertAction(title: "ok", style: .cancel, handler: nil)
+            alertController.addAction(cansel)
+            self.present(alertController, animated: true, completion: nil)
+        }
+        
     }
-    
 }

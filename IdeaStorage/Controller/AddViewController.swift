@@ -19,6 +19,7 @@ class AddViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var textField: UITextField!
+    @IBOutlet weak var headerView: UIView!
     
     
     let realm = try! Realm()
@@ -31,7 +32,29 @@ class AddViewController: UIViewController, UITextFieldDelegate {
         
         addButton.layer.cornerRadius = 5
         
+        addButton.addTarget(self, action: #selector(self.pushButton_Animation(_:)), for: .touchDown)
+        addButton.addTarget(self, action: #selector(self.separateButton_Animation(_:)), for: .touchUpInside)
+        
+        let bottomBorder = CALayer()
+        bottomBorder.frame = CGRect(x: 0, y: headerView.frame.height, width: headerView.frame.width, height: 0.5)
+        bottomBorder.backgroundColor = UIColor.black.cgColor
+        headerView.layer.addSublayer(bottomBorder)
+        
     }
+    
+    @objc func pushButton_Animation(_ sender: UIButton){
+          UIView.animate(withDuration: 0.1, animations:{ () -> Void in
+              sender.transform = CGAffineTransform(scaleX: 0.99, y: 0.99)
+          })
+      }
+          
+          
+      @objc func separateButton_Animation(_ sender: UIButton){
+          UIView.animate(withDuration: 0.2, animations:{ () -> Void in
+              sender.transform = CGAffineTransform(scaleX: 0.99, y: 0.99)
+              sender.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
+          })
+      }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
