@@ -79,6 +79,10 @@ class StorageViewController: UIViewController, UITextFieldDelegate, UIPickerView
         
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+    }
+    
     @objc func pushButton_Animation(_ sender: UIButton){
           UIView.animate(withDuration: 0.1, animations:{ () -> Void in
               sender.transform = CGAffineTransform(scaleX: 0.95, y: 0.95)

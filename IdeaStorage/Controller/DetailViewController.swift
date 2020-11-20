@@ -32,11 +32,11 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
         tableView.separatorStyle = .none
         tableView.register(UINib(nibName: "CustomCell2", bundle: nil), forCellReuseIdentifier: "customCell2")
         
-        
-        let bottomBorder = CALayer()
-        bottomBorder.frame = CGRect(x: 0, y: headerView.frame.height, width: headerView.frame.width, height: 0.5)
-        bottomBorder.backgroundColor = UIColor.black.cgColor
-        headerView.layer.addSublayer(bottomBorder)
+//        
+//        let bottomBorder = CALayer()
+//        bottomBorder.frame = CGRect(x: 0, y: headerView.frame.height, width: headerView.frame.width, height: 0.5)
+//        bottomBorder.backgroundColor = UIColor.black.cgColor
+//        headerView.layer.addSublayer(bottomBorder)
 
         
     }

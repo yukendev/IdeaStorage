@@ -35,10 +35,10 @@ class AddViewController: UIViewController, UITextFieldDelegate {
         addButton.addTarget(self, action: #selector(self.pushButton_Animation(_:)), for: .touchDown)
         addButton.addTarget(self, action: #selector(self.separateButton_Animation(_:)), for: .touchUpInside)
         
-        let bottomBorder = CALayer()
-        bottomBorder.frame = CGRect(x: 0, y: headerView.frame.height, width: headerView.frame.width, height: 0.5)
-        bottomBorder.backgroundColor = UIColor.black.cgColor
-        headerView.layer.addSublayer(bottomBorder)
+//        let bottomBorder = CALayer()
+//        bottomBorder.frame = CGRect(x: 0, y: headerView.frame.height, width: headerView.frame.width, height: 0.5)
+//        bottomBorder.backgroundColor = UIColor.black.cgColor
+//        headerView.layer.addSublayer(bottomBorder)
         
     }
     
@@ -58,6 +58,10 @@ class AddViewController: UIViewController, UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
     }
     
 
